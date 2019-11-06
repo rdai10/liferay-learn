@@ -270,11 +270,13 @@ var Search = {
 				if (DOCUMENTATION_OPTIONS.FILE_SUFFIX === '') {
 					// dirhtml builder
 					var dirname = item[0] + '/';
+
 					if (dirname.match(/\/index\/$/)) {
 						dirname = dirname.substring(0, dirname.length - 6);
 					} else if (dirname == 'index/') {
 						dirname = '';
 					}
+
 					listItem.append(
 						$('<a/>')
 							.attr(
@@ -302,7 +304,9 @@ var Search = {
 				}
 				if (item[3]) {
 					listItem.append($('<span> (' + item[3] + ')</span>'));
+
 					Search.output.append(listItem);
+
 					listItem.slideDown(5, function() {
 						displayNextItem(query);
 					});
@@ -430,7 +434,8 @@ var Search = {
 					if (anchor === '') anchor = fullname;
 					else if (anchor == '-')
 						anchor = objnames[match[1]][1] + '-' + fullname;
-					// add custom score for some objects according to scorer
+
+						// add custom score for some objects according to scorer
 					if (Scorer.objPrio.hasOwnProperty(match[2])) {
 						score += Scorer.objPrio[match[2]];
 					} else {
@@ -480,6 +485,7 @@ var Search = {
 						_o.push({files: terms[w], score: Scorer.partialTerm});
 					}
 				}
+
 				for (var w in titleterms) {
 					if (w.match(word) && !titleterms[word]) {
 						_o.push({
@@ -563,6 +569,7 @@ var Search = {
 						return scoreMap[file][w];
 					})
 				);
+
 				results.push([
 					docnames[file],
 					titles[file],
@@ -590,6 +597,7 @@ var Search = {
 
 		$.each(keywords, function() {
 			var i = textLower.indexOf(this.toLowerCase());
+
 			if (i > -1) start = i;
 		});
 
@@ -599,6 +607,9 @@ var Search = {
 			(start > 0 ? '...' : '') +
 			$.trim(text.substr(start, 240)) +
 			(start + 240 - text.length ? '...' : '');
+
+console.log('excerpt', excerpt);
+
 		var rv = $('<div class="context"></div>').text(excerpt);
 
 		$.each(hlwords, function() {
