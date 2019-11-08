@@ -5,7 +5,7 @@ Contents
    :glob:
    :hidden:
 
-   docs/**/*
+   docs/README
 
 
 Indices and tables
