@@ -3,7 +3,7 @@ Contents
 
 .. toctree::
    :glob:
-   :hidden:
+   :maxdepth: 2
 
    docs/README
 
