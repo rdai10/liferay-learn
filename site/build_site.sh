@@ -118,10 +118,6 @@ function main {
 	# sudo dnf install python3-sphinx
 	#
 
-	python3 -m venv venv
-
-	source venv/bin/activate
-
 	check_utils pip3 sphinx-build zip
 
 	pip_install recommonmark sphinx-intl sphinx-markdown-tables sphinx-notfound-page
