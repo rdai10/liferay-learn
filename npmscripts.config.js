@@ -1,5 +1,6 @@
 const CHECK_AND_FIX_GLOBS = [
 	'**/*.{md,yml}',
+	'/docs/**/*.{css,json}',
 	'/site/**/*.scss',
 	'/site/**/*.js',
 ];
